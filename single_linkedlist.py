@@ -19,7 +19,9 @@ class LinkedList:
         else:
             n=self.head
             while n is not None:
-                print(n.data,end=" ")
+                print(n.data,end=' ')
+                if n.ref is not None:
+                    print("-->",end=' ')
                 n=n.ref
                 
 #Insertion at the begining                
@@ -124,12 +126,12 @@ class LinkedList:
 LL=LinkedList()
 while(True):
     print("\nInsert at Begin Press 1\n")
-    print("\nInsert at end Press 2\n")
-    print("\nInsert at after Press 3\n")
-    print("\nInsert at before Press 4\n")
-    print("\nDelete at Begin Press 5\n")
-    print("\nDelete at End Press 6\n")
-    print("\nDelete by value press 7\n")
+    print("Insert at end Press 2\n")
+    print("Insert at after Press 3\n")
+    print("Insert at before Press 4\n")
+    print("Delete at Begin Press 5\n")
+    print("Delete at End Press 6\n")
+    print("Delete by value press 7\n")
     print("Traverse LinkedList press 8\n")
     print("Exit from the operation press 9")
     num=int(input())
