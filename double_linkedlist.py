@@ -71,6 +71,39 @@ class doubleLinkedList:
             n.next=new_node
             new_node.prev=n
 
+    def add_after(self,data,x):
+        if self.head is None:
+            print('Doubly Linkedlist is empty!!')
+        else:
+            new_node=Node(data)
+            n=self.head
+            while n is not None:
+                if x==n.data:
+                    break
+                n=n.next
+            if n is None:
+                print('Data is not found')
+            else:
+                new_node.next=n.next
+                new_node.prev=n
+                if n.next is not None:
+                    n.next.prev=new_node
+                n.next=new_node
+
+    def add_before(self,data,x):
+        if self.head is None:
+            print('Doubly linkedlist empty')
+        else:
+            n=self.head
+            while n is not None:
+                if x==n.data:
+                    break
+                n=n.next
+            if n is None:
+                print('Doubly Linked list empty')
+            else:
+                new_node=Node(data)
+                #Continue from here
 
 
 
@@ -101,12 +134,14 @@ while(True):
         DLL.add_end(val)
 
     if num==4:
+        val=int(input("Enter the value that you want to add at after: "))
         dat=int(input("Enter the value where you want to insert it: "))
-        val=int(input("Enter the value that you want to add at Before: "))
-        DLL.add_atBefore(dat,val)
+        DLL.add_after(val,dat)
 
     if num==5:
-        DLL.deleteAtBegin()
+        val=int(input("Enter the value that you want to add at before: "))
+        dat=int(input("Enter the value where you want to insert it: "))
+        DLL.add_before(val,dat)
 
     if num==6:
         DLL.deleteAtLast()
