@@ -103,7 +103,7 @@ class doubleLinkedList:
                 print('Doubly Linked list empty')
             else:
                 new_node=Node(data)
-                #Continue from here
+                #Continue from here working in progress
 
 
 
