@@ -48,6 +48,22 @@ class BST:
             self.rchild.post_order()
         if self.key:
             print(self.key,end=" ")
+            
+    #Searching the value is BST
+    def search(self,data):
+        if self.key==data:
+            print("Data is found in the BST")
+            return
+        if self.key>data:
+            if self.lchild:
+                self.lchild.search(data)
+            else:
+                print("Data is not found")
+        if self.key<data:
+            if self.rchild:
+                self.rchild.search(data)
+            else:
+                print("Data is not found.")
 
 root=BST(10)
 l=[6,3,1,6,98,3,7]
@@ -58,3 +74,5 @@ print()
 root.in_order()
 print()
 root.post_order()
+print()
+root.search(10)
