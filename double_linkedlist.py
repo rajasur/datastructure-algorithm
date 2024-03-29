@@ -121,4 +121,3 @@ while(True):
         DLL.backwardTraversal()
     if num==10:
         exit()
-
